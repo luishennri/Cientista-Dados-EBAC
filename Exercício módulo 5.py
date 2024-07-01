@@ -27,7 +27,7 @@ class calculadora():
         while self.stop1: #while, porque quero uma calculadora que não pare de calcular
             z = True
             self.number()
-            if self.result != "":
+            if self.result != "": #se o result for vazio então não nenhuma operação, assim só no segundo loop começa a operar
                 self.operation()
             while z == True: #while, só passa quando digita uma operação valida
                 z1 = self.type() 
@@ -42,13 +42,13 @@ class calculadora():
 
     def type(self): #pergunta qual a operação desejada pelo usuário
         self.op = input("Digite a operação: ")
-        if self.op == str(0):
+        if self.op == str(0): #se o usuário digitar 0 a função stop() é chamada
             self.stop()
-        if self.result == "":
+        if self.result == "": #para salvar o numero passado na variável result no primeiro loop do while principal
             self.result = self.n1
         return self.op
 
-    def operation(self): #condição para saber qual operação fazer com os nuúeros passados
+    def operation(self): #condição para saber qual operação fazer com os núeros
         if self.op == str(1) or self.op == "+":
             self.sum()
         elif self.op == str(2) or self.op == "-":
@@ -89,7 +89,7 @@ class calculadora():
         self.result %= self.n1
         self.show_result()
         
-    def pont(self): #potencia
+    def pont(self): #função potencia
         self.result **= self.n1
         self.show_result()
         
